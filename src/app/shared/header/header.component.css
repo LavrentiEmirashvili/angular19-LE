@@ -5,12 +5,13 @@
   color: white;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  /* Ensuring it's fixed at the top and covers the full width */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; 
   z-index: 1000;
-  background-color: #001414;
+  background-color: var(--primary-dark-green); /* Standardized background */
 }
 
 .site-title {
@@ -19,20 +20,22 @@
 }
 
 .site-title a {
-  color: #009200;
+  color: var(--accent-green-hover); /* Used accent variable */
   text-decoration: none;
   font-size: 1.5em;
   font-weight: bold;
 }
 .site-title a:hover {
-  text-shadow: #005200 0 0 6px;
-  transition: all ease-in-out 0, 3s;
+  text-shadow: var(--accent-green-hover) 0 0 6px; /* Used accent variable */
+  transition: all ease-in-out 0.3s;
 }
+
 .current-datetime {
   font-size: 1em;
   font-weight: 600;
-  color: #009200;
+  color: var(--accent-green-hover); /* Used accent variable */
   padding-right: 30px;
+  /* Hide on very small screens to save space */
 }
 
 .sidebar-toggle {
@@ -48,4 +51,11 @@
 
 .sidebar-toggle:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 520px) {
+  .current-datetime {
+    /* Hide date/time on smaller screens to prioritize title and menu button */
+    display: none;
+  }
 }

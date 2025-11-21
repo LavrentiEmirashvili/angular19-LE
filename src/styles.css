@@ -1,40 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --primary-dark-green: #001f1f; 
+  --secondary-dark-blue-gray: #1a202c; 
+  --card-bg: #2a2a2a; 
+  --border-color: #333;
+
+  /* Text Colors */
+  --text-light: #e0e0e0;
+  --text-medium: #a0a0a0; 
+  
+  /* Accent Colors - Defined to fix reference error in .data-table tbody tr:hover */
+  --accent-green: #228B22; 
+  --accent-green-hover: #009200; /* Used for title/date hover */
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #001414;
+  /* Use the defined variable for consistency */
+  background-color: var(--secondary-dark-blue-gray); 
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #ffffee;
-}
-/* Global Color Palette */
-:root {
-  --primary-dark-green: #001f1f; /* Very Dark Green */
-  --secondary-dark-blue-gray: #1a202c; /* Dark Blue-Gray */
-  --accent-green: #004d4d; /* Slightly lighter dark green for accents/hover */
-  --text-light: #e0e0e0; /* Light text for dark backgrounds */
-  --text-medium: #a0a0a0; /* Medium gray text */
-  --card-bg: #2a2a2a; /* Card background */
-  --border-color: #333;
+  /* Use the defined variable for consistency */
+  color: var(--text-light); 
 }
 
-body {
-  font-family: 'Ubuntu', sans-serif;
-  margin: 0;
-  background-color: var(--secondary-dark-blue-gray); /* Apply global background */
-  color: var(--text-light); /* Apply global text color */
-}
+/* Base body styles were duplicated, removed the first set */
 
-/* Basic table styles for all tables */
+/* --- Data Table Styles --- */
+
 .data-table {
-  width: 100%;
+  width: 100%; /* Ensures it takes full width of its container */
   border-collapse: collapse;
   margin-top: 20px;
-  background-color: var(--card-bg); /* Table background */
+  background-color: var(--card-bg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   border-radius: 8px;
-  overflow: hidden; /* For rounded corners */
+  overflow: hidden;
 }
 
 .data-table th,
@@ -52,12 +57,14 @@ body {
 }
 
 .data-table tbody tr:hover {
-  background-color: var(--accent-green); /* Slightly lighter dark green on hover */
-  color: white; /* Ensure text remains white */
+  /* Used the defined variable for consistency */
+  background-color: var(--accent-green); 
+  color: white;
   cursor: pointer;
 }
 
-/* Button styles */
+/* --- Button Styles --- */
+
 button {
   background-color: var(--accent-green);
   color: white;
@@ -70,4 +77,32 @@ button {
 
 button:hover {
   background-color: var(--primary-dark-green);
+}
+
+/* --- Responsive Table (optional but recommended) --- */
+
+@media (max-width: 600px) {
+  .data-table thead {
+    /* Hide table header on small screens */
+    display: none;
+  }
+  .data-table, .data-table tbody, .data-table tr, .data-table td {
+    /* Make table elements act like blocks */
+    display: block;
+    width: 100%;
+  }
+  .data-table tr {
+    /* Add spacing between records */
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  .data-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px dotted var(--border-color);
+  }
+  /* You would need to add data-label attributes to the HTML for this to work perfectly, 
+     but this structure is the CSS foundation for a responsive table. */
 }

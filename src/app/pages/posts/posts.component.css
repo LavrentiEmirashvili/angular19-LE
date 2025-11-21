@@ -51,15 +51,14 @@
   color: var(--text-medium);
   font-size: 0.9em;
   line-height: 1.5;
-  flex-grow: 1; /* Allows paragraph to take available space */
+  flex-grow: 1; 
 }
 
 .card button {
-  align-self: flex-end; /* Pushes button to the bottom right */
+  align-self: flex-end; 
   margin-top: 15px;
 }
 
-/* Pagination Styles */
 .pagination-controls {
   display: flex;
   justify-content: center;

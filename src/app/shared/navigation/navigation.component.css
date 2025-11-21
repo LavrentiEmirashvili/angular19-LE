@@ -1,13 +1,13 @@
-
 .navbar {
+  /* Base styles for closed state */
   width: 0; 
   min-width: 0; 
   overflow: hidden; 
-  transition: width 0.3s ease-in-out; 
+  transition: width 0.3s ease-in-out, min-width 0.3s ease-in-out; 
   
-
-  background-color: #001414; 
-  color: #c9c9c9; 
+  /* Standardized background */
+  background-color: var(--primary-dark-green); 
+  color: var(--text-medium); 
   height: 100%; 
   padding-top: 20px;
   box-sizing: border-box; 
@@ -15,7 +15,9 @@
 }
 
 .navbar.open {
+  /* Explicitly setting min-width for open state */
   width: 250px; 
+  min-width: 250px; 
 }
 
 .app-navigation ul {
@@ -28,7 +30,7 @@
   display: block; 
   padding: 15px 20px;
   text-decoration: none;
-  color: #c9c9c9; 
+  color: var(--text-medium); 
   font-size: 1.1em;
   transition: background-color 0.2s, color 0.2s;
 }
@@ -39,7 +41,7 @@
 }
 
 .app-navigation a.active {
-  background-color: #228B22; 
+  background-color: var(--accent-green); 
   color: white;
   border-left: 5px solid #778B55; 
   padding-left: 15px; 
