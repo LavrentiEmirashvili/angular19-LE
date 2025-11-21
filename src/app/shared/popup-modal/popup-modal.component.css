@@ -1,0 +1,89 @@
+/* src/app/shared/popup-modal/popup-modal.component.css */
+
+.modal-backdrop {
+  position: fixed; /* Fixed position to overlay the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.7); /* Translucent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* High z-index to ensure it's on top */
+  animation: fadeIn 0.3s ease-out; /* Fade-in animation */
+}
+
+.modal-content {
+  background-color: var(--card-bg); /* Use card background for the modal */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  max-width: 600px; /* Max width for readability */
+  width: 90%; /* Responsive width */
+  position: relative;
+  max-height: 80vh; /* Max height to avoid overflow */
+  overflow-y: auto; /* Enable scrolling if content is long */
+  animation: slideIn 0.3s ease-out; /* Slide-in animation */
+  color: var(--text-light); /* Text color inside modal */
+}
+
+.modal-content h3 {
+  color: var(--text-light);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.modal-content p {
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 30px;
+  height: 30px;
+  font-size: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: var(--primary-dark-green);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Prevent body scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+.modal-backdrop {
+  position: fixed; /* აუცილებელია */
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  /* 👇 ეს ხაზი აფიქსირებს პოზიციის პრიორიტეტს */
+  z-index: 10000; 
+  /* ... დანარჩენი სტილები ... */
+}

@@ -23,3 +23,75 @@
     gap: 10px;
     justify-content: center;
     align-items: center;}
+.post-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  color: var(--text-light);
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-medium);
+  font-size: 0.9em;
+  line-height: 1.5;
+  flex-grow: 1; /* Allows paragraph to take available space */
+}
+
+.card button {
+  align-self: flex-end; /* Pushes button to the bottom right */
+  margin-top: 15px;
+}
+
+/* Pagination Styles */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-controls button {
+  padding: 8px 12px;
+}
+
+.pagination-controls button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pagination-controls span {
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.pagination-controls select {
+  background-color: var(--accent-green);
+  color: white;
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}

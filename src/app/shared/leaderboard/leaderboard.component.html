@@ -1,1 +1,45 @@
-<p>leaderboard works!</p>
+<div class="leaderboard-container">
+  <h2>ლიდერბორდი</h2>
+
+  <div class="filter-buttons">
+    @for (filter of filterOptions; track filter) {
+    <button
+      [class.active]="filter === activeFilter"
+      (click)="applyFilter(filter)"
+    >
+      კვირა {{ filter }}
+    </button>
+    }
+  </div>
+
+  <div class="leaderboard-table">
+    <div class="table-header">
+      <div class="header-item place">#</div>
+      <div class="header-item name">მომხმარებელი</div>
+      <div class="header-item week">კვირა</div>
+    </div>
+
+    @for (entry of filteredData; track entry.customerId) {
+    <div class="table-row" [class.top-place]="entry.place <= 3">
+      <div class="row-item place">
+        @if (entry.place === 1) {
+        <span class="rank-badge gold">🥇</span>
+        } @else if (entry.place === 2) {
+        <span class="rank-badge silver">🥈</span>
+        } @else if (entry.place === 3) {
+        <span class="rank-badge bronze">🥉</span>
+        } @else {
+        {{ entry.place }}
+        }
+      </div>
+      <div class="row-item name">
+        {{ entry.loginName }}
+        <span class="customer-id">ID: {{ entry.customerId }}</span>
+      </div>
+      <div class="row-item week">{{ entry.week }}</div>
+    </div>
+    } @if (filteredData.length === 0) {
+    <div class="no-data">ჩანაწერი ვერ მოიძებნა არჩეული კვირისთვის.</div>
+    }
+  </div>
+</div>

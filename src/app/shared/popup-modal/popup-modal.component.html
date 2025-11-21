@@ -1,1 +1,7 @@
-<p>popup-model works!</p>
+<div class="modal-backdrop" (click)="close()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="close()">X</button>
+        <h3>{{ title }}</h3>
+        <p>{{ body }}</p>
+      </div>
+    </div>

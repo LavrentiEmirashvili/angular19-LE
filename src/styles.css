@@ -8,3 +8,66 @@ body {
   font-style: normal;
   color: #ffffee;
 }
+/* Global Color Palette */
+:root {
+  --primary-dark-green: #001f1f; /* Very Dark Green */
+  --secondary-dark-blue-gray: #1a202c; /* Dark Blue-Gray */
+  --accent-green: #004d4d; /* Slightly lighter dark green for accents/hover */
+  --text-light: #e0e0e0; /* Light text for dark backgrounds */
+  --text-medium: #a0a0a0; /* Medium gray text */
+  --card-bg: #2a2a2a; /* Card background */
+  --border-color: #333;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  background-color: var(--secondary-dark-blue-gray); /* Apply global background */
+  color: var(--text-light); /* Apply global text color */
+}
+
+/* Basic table styles for all tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: var(--card-bg); /* Table background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  overflow: hidden; /* For rounded corners */
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-light);
+}
+
+.data-table thead th {
+  background-color: var(--primary-dark-green);
+  color: white;
+  font-weight: bold;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--accent-green); /* Slightly lighter dark green on hover */
+  color: white; /* Ensure text remains white */
+  cursor: pointer;
+}
+
+/* Button styles */
+button {
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark-green);
+}

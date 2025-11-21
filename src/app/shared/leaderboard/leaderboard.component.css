@@ -1,0 +1,118 @@
+.leaderboard-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #e9ecef;
+    margin-bottom: 20px;
+}
+
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    padding: 8px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-buttons button:hover {
+    border-color: #038703;
+    color: #038703;
+}
+
+
+.filter-buttons button.active {
+    background-color: #038703; 
+    color: #fff; 
+    border-color: #238B21;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+
+.leaderboard-table {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #9c9d9e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table-header, .table-row {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1.5fr; 
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+
+.table-header {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #495057;
+    border-bottom: 2px solid #ddd;
+}
+
+.table-row {
+    transition: background-color 0.15s;
+}
+
+.table-row:nth-child(even) {
+    background-color: #adb2b3;
+}
+
+.table-row:hover {
+    background-color: #eef2f5;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row.top-place {
+    font-weight: 600;
+    background-color: #fffbe6; 
+}
+.row-item.place {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.customer-id {
+    display: block;
+    font-size: 0.75em;
+    color: #999;
+    font-weight: normal;
+}
+
+
+.rank-badge {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.no-data {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-style: italic;
+}
