@@ -1,0 +1,10 @@
+.site-title a{
+    text-decoration: none;
+    color: #009200;
+    font-size: 24px;
+    font-weight: bold;
+}
+.site-title a:hover{
+    text-shadow: #005200 0 0 6px;
+    transition: all ease-in-out 0,3s;
+}

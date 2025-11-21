@@ -1,0 +1,57 @@
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  flex-grow: 1; /* იკავებს დარჩენილ სივრცეს */
+  width: 100%;
+  padding-top: 60px; /* Header-ის სიმაღლის კომპენსაცია */
+  padding-bottom: 40px; /* Footer-ის სიმაღლის კომპენსაცია */
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0 auto; /* ცენტრში გასწორება */
+  max-width: 100%; /* სტანდარტულად მთელი სიგანე */
+  
+  /* სტანდარტული მონიტორებისთვის (1024px-დან): 50% */
+  /* ეს არის დეფოლტ მნიშვნელობა დიდ ეკრანებზე */
+  width: 50%; 
+  min-width: 500px; /* რათა არ იყოს ძალიან პატარა */
+}
+
+/* მობილური მოწყობილობებისთვის (მაგალითად, 1023px-მდე) */
+@media (max-width: 1023px) {
+  .content-wrapper {
+    /* მობილური მოწყობილობებისთვის: 80% */
+    width: 80%;
+  }
+}
+
+/* მცირე მობილურებისთვის (მაგალითად, 600px-მდე) */
+@media (max-width: 600px) {
+  .content-wrapper {
+    width: 95%; /* თითქმის მთელი სიგანე */
+    padding: 10px;
+  }
+
+  .main-container {
+      flex-direction: column; /* მობილურზე ნავიგაცია ზემოთ */
+  }
+
+  app-navigation {
+      width: 100%;
+      /* შესაძლოა დაგჭირდეთ ჰორიზონტალური ნავიგაციის სტილები აქ */
+  }
+}
