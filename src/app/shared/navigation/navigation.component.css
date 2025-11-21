@@ -1,0 +1,47 @@
+
+.navbar {
+  width: 0; 
+  min-width: 0; 
+  overflow: hidden; 
+  transition: width 0.3s ease-in-out; 
+  
+
+  background-color: #001414; 
+  color: #c9c9c9; 
+  height: 100%; 
+  padding-top: 20px;
+  box-sizing: border-box; 
+  flex-shrink: 0; 
+}
+
+.navbar.open {
+  width: 250px; 
+}
+
+.app-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-navigation a {
+  display: block; 
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #c9c9c9; 
+  font-size: 1.1em;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.app-navigation a:hover {
+  background-color: #003333; 
+  color: white; 
+}
+
+.app-navigation a.active {
+  background-color: #228B22; 
+  color: white;
+  border-left: 5px solid #778B55; 
+  padding-left: 15px; 
+  font-weight: bold;
+}

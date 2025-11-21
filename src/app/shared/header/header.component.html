@@ -1,1 +1,9 @@
-<p>header works!</p>
+<header class="app-header">
+      <button (click)="onToggleSidenav()">
+  ☰
+</button>
+      <div class="site-title">
+        <a href="/users">CrocoAngular</a>
+      </div>
+      <div class="current-datetime">{{ currentDateTime | date:'yyyy-MM-dd HH:mm:ss' }}</div>
+</header>

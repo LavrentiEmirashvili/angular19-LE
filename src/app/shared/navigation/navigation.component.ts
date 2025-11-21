@@ -1,25 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core'; // ამოვიღეთ Output და EventEmitter
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
-  template: `
-    <nav class="app-navigation">
-      <ul>
-        <li>
-          <a [routerLink]="['/users']" routerLinkActive="active">მომხმარებლები</a>
-        </li>
-        <li>
-          <a [routerLink]="['/posts']" routerLinkActive="active">პოსტები</a> 
-        </li>
-        <li>
-          <a [routerLink]="['/promo']" routerLinkActive="active">აქციები</a> 
-        </li>
-      </ul>
-    </nav>
-  `,
+  templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'
 })
-export class NavigationComponent {}
+export class NavigationComponent {
+  @Input() open: boolean = false;
+  // @Output() closeNavbar = new EventEmitter<void>(); <-- ეს აღარ გვჭირდება
+}

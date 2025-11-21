@@ -1,1 +1,15 @@
-<p>navigation works!</p>
+<div class="navbar" [class.open]="open">
+  <nav class="app-navigation">
+    <ul>
+      <li>
+        <a [routerLink]="['/users']" routerLinkActive="active">მომხმარებლები</a>
+      </li>
+      <li>
+        <a [routerLink]="['/posts']" routerLinkActive="active">პოსტები</a>
+      </li>
+      <li>
+        <a [routerLink]="['/promo']" routerLinkActive="active">აქციები</a>
+      </li>
+    </ul>
+  </nav>
+  </div>

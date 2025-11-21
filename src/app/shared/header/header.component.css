@@ -1,10 +1,51 @@
-.site-title a{
-    text-decoration: none;
-    color: #009200;
-    font-size: 24px;
-    font-weight: bold;
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #001414;
 }
-.site-title a:hover{
-    text-shadow: #005200 0 0 6px;
-    transition: all ease-in-out 0,3s;
+
+.site-title {
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.site-title a {
+  color: #009200;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.site-title a:hover {
+  text-shadow: #005200 0 0 6px;
+  transition: all ease-in-out 0, 3s;
+}
+.current-datetime {
+  font-size: 1em;
+  font-weight: 600;
+  color: #009200;
+  padding-right: 30px;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 10px;
+  transition: opacity 0.1s;
+}
+
+.sidebar-toggle:hover {
+  opacity: 0.8;
 }

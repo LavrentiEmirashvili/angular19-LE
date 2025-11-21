@@ -8,41 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-users-page',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  template: `
-    <h2>მომხმარებლები</h2>
-
-    <div class="search-bar">
-      <input type="text" [(ngModel)]="searchTerm" (input)="filterUsers()" placeholder="ძებნა: სახელი, მეილი">
-    </div>
-
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>სახელი</th>
-          <th>მეილი</th>
-          <th>ტელეფონი</th>
-          <th>კომპანია</th>
-          <th>მოქმედება</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of filteredUsers">
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.phone }}</td>
-          <td>{{ user.company.name }}</td>
-          <td class="actions">
-            <button class="action-btn" (click)="viewUserPosts(user.id)">
-              პოსტები
-            </button>
-            <button class="action-btn" (click)="viewUserTodos(user.id)">
-              TODO List
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  `,
+  templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
 export class UsersComponent implements OnInit {

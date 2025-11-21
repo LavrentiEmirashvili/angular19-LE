@@ -1,0 +1,23 @@
+.footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 40px;
+	box-shadow: 0 -1px 0 rgba(0,0,0,1); 
+}
+
+.footer > *{
+	flex: 0 1 auto;
+}
+
+@media (max-width: 520px){
+	.footer{
+		flex-direction: column;
+		gap: 0.5rem;
+		align-items: stretch;
+		text-align: center;
+	}
+	.footer > *{
+		width: 100%;
+	}
+}

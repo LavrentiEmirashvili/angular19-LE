@@ -5,6 +5,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { PromoComponent } from './pages/promo/promo.component';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },

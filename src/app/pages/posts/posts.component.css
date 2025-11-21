@@ -1,0 +1,25 @@
+.posts-button{
+    background-color: #004d4d;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: background-color 0.3s, color 0.3s;
+    color: #009203;
+    font-weight: 800;
+    border-radius: 10%;;
+}
+.posts-button:hover{
+    background-color: #009200;
+    color: #001414;
+    transition: ease-in 0.05s;
+}
+.data-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.action{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;}
